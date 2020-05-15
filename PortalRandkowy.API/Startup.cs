@@ -34,7 +34,6 @@ namespace PortalRandkowy.API
 
             app.UseHttpsRedirection();
 
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
