@@ -20,8 +20,8 @@ namespace PortalRandkowy.API.Data
         {
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
 
-            if (user == nameof)
-                return;
+            if (user == null)
+                return null;
 
             if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 return null;
