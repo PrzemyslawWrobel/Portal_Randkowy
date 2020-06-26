@@ -18,11 +18,17 @@ namespace PortalRandkowy.API
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // Kontener wstrzykiwania zależności
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // Rejestracja usługi zwiazanej z 
             services.AddCors();
+            // Rejestracja usługi logowania i autoryzacji
+            // AddSinngelton - jedna dla wszystkich żadań http - przy dużej ilości zapytań nie odpowiednia
+            // AddTransient - używać dla małych aplikacji, ponieważ każde zapytanie powoduje utworzenie kolejnej instancji repozytorium
+            // AddScoped - tworzy jedna instancję dla żadania http i używa jej dla w obrębie tego samego zapytania www
             services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
