@@ -21,4 +21,15 @@ export class NavComponent implements OnInit {
       console.log('wystąpił błąd logowania');
     });
   }
+
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    console.log('zostałeś wylogowany');
+  }
 }
