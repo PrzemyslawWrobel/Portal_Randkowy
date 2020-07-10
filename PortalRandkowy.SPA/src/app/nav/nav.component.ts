@@ -12,7 +12,7 @@ export class NavComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private authService: AuthService, private alertifyService: AlertifyService) { }
+  constructor(public authService: AuthService, private alertifyService: AlertifyService) { }
 
   ngOnInit() {
   }
