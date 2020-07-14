@@ -28,6 +28,7 @@ namespace PortalRandkowy.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             // Rejestracja usługi zwiazanej z 
             services.AddCors();
+            services.AddTransient<Seed>();
             // Rejestracja usługi logowania i autoryzacji
             // AddSinngelton - jedna dla wszystkich żadań http - przy dużej ilości zapytań nie odpowiednia
             // AddTransient - używać dla małych aplikacji, ponieważ każde zapytanie powoduje utworzenie kolejnej instancji repozytorium
@@ -49,12 +50,13 @@ namespace PortalRandkowy.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseAuthentication();
             app.UseMvc();
