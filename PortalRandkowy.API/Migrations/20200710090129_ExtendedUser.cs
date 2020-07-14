@@ -10,172 +10,172 @@ namespace PortalRandkowy.API.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "Children",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "City",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Country",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "Created",
                 table: "Users",
-                nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                nullable : false,
+                defaultValue : new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "DateOfBirth",
                 table: "Users",
-                nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                nullable : false,
+                defaultValue : new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
                 name: "Description",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Education",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "EyeColor",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "FreeTime",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "FriendeWouldDescribeMe",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Gender",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Growth",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "HairColor",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "ILike",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "IdoNotLike",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Interests",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "ItFeelsBestIn",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Languages",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "LastActive",
                 table: "Users",
-                nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                nullable : false,
+                defaultValue : new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
                 name: "LookingFor",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "MakesMeLaugh",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "MartialStatus",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Motto",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Movies",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Music",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Personality",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Profession",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Sport",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.AddColumn<string>(
                 name: "ZodiacSign",
                 table: "Users",
-                nullable: true);
+                nullable : true);
 
             migrationBuilder.CreateTable(
                 name: "Photos",
-                columns: table => new
+                columns : table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Url = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    DateAdded = table.Column<DateTime>(nullable: false),
-                    IsMain = table.Column<bool>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                        Url = table.Column<string>(nullable: true),
+                        Description = table.Column<string>(nullable: true),
+                        DateAdded = table.Column<DateTime>(nullable: false),
+                        IsMain = table.Column<bool>(nullable: false),
+                        UserId = table.Column<int>(nullable: false)
                 },
-                constraints: table =>
+                constraints : table =>
                 {
                     table.PrimaryKey("PK_Photos", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Photos_Users_UserId",
-                        column: x => x.UserId,
+                        column : x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete : ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
