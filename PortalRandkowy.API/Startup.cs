@@ -34,7 +34,8 @@ namespace PortalRandkowy.API
             // AddTransient - używać dla małych aplikacji, ponieważ każde zapytanie powoduje utworzenie kolejnej instancji repozytorium
             // AddScoped - tworzy jedna instancję dla żadania http i używa jej dla w obrębie tego samego zapytania www
             services.AddScoped<IAuthRepository, AuthRepository>();
-
+            services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             // autoryzycja
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(option =>
