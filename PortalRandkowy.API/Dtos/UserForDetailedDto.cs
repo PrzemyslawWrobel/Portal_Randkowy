@@ -49,7 +49,7 @@ namespace PortalRandkowy.API.Dtos
         public string FriendeWouldDescribeMe { get; set; } // Przyjaciele opisali by mnie
 
         // // Zakładka zdjecia
-        public ICollection<Photo> Photos { get; set; } // Zdjęcia użytkownika
+        public ICollection<PhotosForDetailedDto> Photos { get; set; } // Zdjęcia użytkownika
 
         public string PhotoUrl { get; set; }
     }
