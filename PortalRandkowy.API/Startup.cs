@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,7 @@ namespace PortalRandkowy.API
                 });
             // Rejestracja usługi zwiazanej z 
             services.AddCors();
+            services.AddAutoMapper();
             services.AddTransient<Seed>();
             // Rejestracja usługi logowania i autoryzacji
             // AddSinngelton - jedna dla wszystkich żadań http - przy dużej ilości zapytań nie odpowiednia
