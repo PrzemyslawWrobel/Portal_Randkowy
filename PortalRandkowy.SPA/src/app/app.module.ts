@@ -16,6 +16,7 @@ import { UsersListComponent } from './users/usersList/usersList.component';
 import { LikesComponent } from './likes/likes.component';
 import { MessegesComponent } from './messeges/messeges.component';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 
@@ -49,7 +50,8 @@ export function tokenGetter() {
    providers: [
       AuthService,
       AlertifyService,
-      UserService
+      UserService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent
