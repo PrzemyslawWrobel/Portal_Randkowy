@@ -13,6 +13,7 @@ import { AlertifyService } from './_services/alertify.service';
 import { UserService } from './_services/user.service';
 import { UsersListComponent } from './users/usersList/usersList.component';
 import { LikesComponent } from './likes/likes.component';
+import { MessegesComponent } from './messeges/messeges.component';
 
 
 export function tokenGetter() {
@@ -26,7 +27,8 @@ export function tokenGetter() {
       HomeComponent,
       RegisterComponent,
       UsersListComponent,
-      LikesComponent
+      LikesComponent,
+      MessegesComponent
    ],
    imports: [
       BrowserModule,
@@ -50,3 +52,10 @@ export function tokenGetter() {
    ]
 })
 export class AppModule { }
+// {
+//    config: {
+//       tokenGetter: tokenGetter,
+//          whitelistedDomains: ['localhost:5000'],
+//             blacklistedRoutes: ['localhost:5000/api/auth']
+//    }
+// }),
