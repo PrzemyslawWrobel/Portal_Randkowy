@@ -20,6 +20,7 @@ import { MessegesComponent } from './messeges/messeges.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './_guards/auth.guard';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { UserCardComponent } from './users/userCard/userCard.component';
 
 
 
@@ -35,7 +36,8 @@ export function tokenGetter() {
       RegisterComponent,
       UsersListComponent,
       LikesComponent,
-      MessegesComponent
+      MessegesComponent,
+      UserCardComponent
    ],
    imports: [
       BrowserModule,
