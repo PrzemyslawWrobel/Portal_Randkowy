@@ -83,11 +83,10 @@ namespace PortalRandkowy.API
 
                         if (error != null)
                         {
-                            context.Response.AddAplicationError(error.Error.Message);
+                            context.Response.AddApplicationError(error.Error.Message);
                             await context.Response.WriteAsync(error.Error.Message);
                         }
                     });
-
                 });
             }
             seeder.SeedUsers();
